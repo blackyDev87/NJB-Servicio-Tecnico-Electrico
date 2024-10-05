@@ -1,0 +1,407 @@
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 800
+
+.oxanium-<uniquifier> {
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+body,
+html {
+  height: 100% !important;
+  box-sizing: border-box;
+  font-family: "Oxanium", sans-serif !important;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 1s, top 1s ease, background-image 1s ease;
+}
+
+.navbar.scrolled {
+  background-color: #002b74 !important;
+  background-image: linear-gradient(to bottom, #002b74 20%, rgba(0, 0, 0, 0.3));
+}
+
+.navbar-brand-logo {
+  width: 15.625rem;
+  height: 10.875rem;
+}
+
+.navbar-toggler {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.bi-filter-right {
+  font-size: 2.188rem;
+  color: aliceblue;
+}
+
+.nav-item {
+  font-size: 1.25rem;
+}
+
+.nav-link {
+  color: aliceblue !important;
+  font-weight: 500 !important;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.25rem; /* Espacio para el "subrayado" */
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0.125rem;
+  bottom: 0;
+  left: 0;
+  background-color: #4472c4; /* Color del subrayado por defecto */
+  transition: width 0.4s ease, background-color 0.4s ease; /* Añadimos la transición para el color */
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Expande el subrayado en hover */
+}
+
+/* Cuando el navbar está en el estado scrolled */
+.navbar.scrolled .nav-link {
+  color: #ffffff !important; /* Color del texto al hacer scroll */
+}
+
+.navbar.scrolled .nav-link::after {
+  background-color: #ffffff; /* Subrayado blanco cuando el navbar está scrolled */
+}
+
+.navbar.scrolled .nav-link:hover::after {
+  width: 100%; /* Aseguramos la expansión del subrayado en hover */
+}
+
+section {
+  scroll-margin-top: 11.25rem; /* Ajusta el valor según la altura del navbar */
+}
+
+/* Para ajustar el contenido del carousel */
+
+.carousel-item img {
+  object-fit: cover !important;
+  width: 100% !important;
+}
+
+@media (min-width: 62rem) {
+  .carousel-item img {
+    height: 100vh !important;
+  }
+}
+
+@media (max-width: 48rem) {
+  .carousel-item img {
+    height: 50vh !important;
+  }
+}
+
+/* Superposición grisácea sobre el carousel */
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0000004d; /* Color gris oscuro con transparencia */
+  z-index: 1;
+}
+
+.card-column-cont {
+  margin-top: -6.56rem !important;
+}
+
+#quienes-somos {
+  background: url("assets/placo-section.png");
+  background-repeat: repeat;
+  color: white; /* Color del texto dentro de la sección */
+  padding-top: 3.125rem; /* Espaciado vertical */
+  padding-bottom: 3.125rem; /* Espaciado vertical */
+  position: relative; /* Necesario para la superposición */
+}
+
+#quienes-somos::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 80%,
+    rgba(255, 255, 255, 1) 10%
+  ); /* Degradé en forma de "V" */
+  z-index: 1; /* Asegura que la superposición esté encima de la imagen */
+}
+
+#quienes-somos .card {
+  border: none;
+  border-radius: 0.625rem;
+  position: relative;
+  z-index: 2;
+}
+
+#quienes-somos .card-header {
+  background-color: #002b74;
+}
+
+#quienes-somos .card-body {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.card-title {
+  color: #79797a !important;
+  font-size: 2.438rem !important;
+}
+
+.card-text {
+  font-size: 1.25rem;
+  color: #7799ad;
+}
+
+.section-us-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+}
+
+.btn-us {
+  background-color: #7799ad !important;
+  font-weight: 500 !important;
+  color: aliceblue !important;
+  border-radius: 50rem !important;
+  font-size: 1rem !important;
+  padding: 0.6rem 2.5rem !important;
+  transition: transform 0.3s ease !important;
+}
+
+.btn-us:hover {
+  transform: translateY(-0.313rem);
+}
+
+.title-beneficios {
+  color: #79797a !important;
+  font-size: 2.5rem !important;
+}
+
+.icono-beneficio {
+  font-size: 3rem !important;
+  color: #4472c4 !important;
+}
+
+.wrapper-service {
+  padding-top: 4.375rem !important;
+  padding-bottom: 5rem !important;
+}
+
+.section-service-title {
+  color: #79797a !important;
+  font-size: 2.5rem !important;
+}
+
+.service-card {
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-0.625rem);
+}
+
+.card-service-body {
+  text-align: center;
+}
+
+.card-service-title {
+  font-size: 1.25rem !important;
+  text-align: center;
+  margin-top: 0.938rem !important;
+  margin-bottom: 0.938rem !important;
+}
+
+.card-service-text {
+  font-size: 1.1rem !important;
+  margin-top: 0.938rem !important;
+  margin-bottom: 0.938rem !important;
+}
+
+.card-service-img {
+  transition: transform 0.3s ease; /* Efecto suave en la imagen */
+}
+
+.card:hover .card-service-img {
+  transform: scale(1.1); /* Escala la imagen al hacer hover */
+}
+
+/* Form estilos */
+
+.form-title {
+  color: #79797a !important;
+  font-size: 2.5rem !important;
+}
+
+.title-contact {
+  color: #17161a !important;
+  font-size: 1.125em !important;
+  font-weight: 700 !important;
+}
+
+.text-contact {
+  margin-top: 0.938rem !important;
+  margin-bottom: 0 !important;
+  font-size: 1.0625em !important;
+}
+
+.text-form {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 1.563rem;
+}
+
+.container-form-control {
+  margin-bottom: 2.5rem !important;
+  padding-left: 0.938rem !important;
+  padding-right: 0.938rem !important;
+}
+
+.form-control {
+  font-size: 0.938rem !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
+  border-bottom: 0.125rem solid #504f4f !important;
+  background: transparent !important;
+  width: 100% !important;
+  padding: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #17161a !important;
+  border-radius: 0 !important; /* Añade esta línea */
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.form-icon {
+  color: #4472c4;
+}
+
+.form-btn {
+  color: aliceblue !important;
+  font-weight: 700 !important;
+  background-color: #4472c4 !important;
+  border-radius: 50rem !important;
+  font-size: 1rem !important;
+  padding: 1rem 2.5rem !important;
+  transition: transform 0.3s ease !important;
+}
+
+.form-btn:hover {
+  transform: translateY(-0.313rem);
+}
+
+.warnings,
+.success {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  text-align: center;
+}
+
+.warnings {
+  color: #ab1d79;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.success {
+  color: #0097b2;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* FOOTER */
+
+.backg-foot {
+  background-image: url(assets/wires-instruments-table.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* height: auto !important; */
+}
+
+.footer-links {
+  text-decoration: none;
+  font-size: 1.563rem;
+  color: #fff;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.text-copiright-1,
+.text-copiright-2 {
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  color: aliceblue;
+  z-index: 3; /* El texto debe estar sobre la capa gris */
+}
+
+.blackyDev {
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: linear-gradient(100deg, #c0c0c0, #ffffff, #c0c0c0);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 0.313rem rgba(0, 0, 0, 0.3);
+}
+
+/* MAPA */
+
+.map-overlay {
+  position: relative; /* Posición relativa para contener elementos */
+  z-index: 1; /* Z-index menor para que el mapa esté por encima */
+  display: flex;
+  justify-content: center; /* Centrar el mapa horizontalmente */
+  margin: 1rem 0 -6.25rem 0 !important; /* Ajusta el margen superior para superponer */
+  z-index: 100;
+}
+
+#map {
+  width: 80%; /* Ancho del mapa */
+  height: 25rem; /* Altura del mapa */
+  border: 0.125rem solid #4472c4; /* Borde blanco para el mapa */
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5); /* Sombra para efecto de profundidad */
+  border-radius: 0.5rem; /* Bordes redondeados */
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 3.5rem;
+  height: 3.5rem;
+  bottom: 2.5rem;
+  right: auto;
+  left: 1.3rem;
+  background-color: #25d366;
+  color: white;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 2rem;
+  box-shadow: 0.13rem 0.13rem 0.6rem rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+}

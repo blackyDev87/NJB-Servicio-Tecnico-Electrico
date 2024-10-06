@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     success.innerHTML = "";
 
     // Validaciones
-    if (nombre.value.length < 10) {
+    if (nombre.value.length < 4) {
       warnings += "El nombre no es válido.<br>";
       entrar = true;
     }

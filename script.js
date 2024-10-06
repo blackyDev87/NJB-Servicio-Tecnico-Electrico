@@ -48,15 +48,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Validaciones
     if (nombre.value.length < 4) {
-      warnings += "El nombre no es válido.<br>";
+      warnings += "El nombre no es válido. Debe contener al menos 4 caracteres.<br>";
       entrar = true;
     }
-    if (asunto.value.length < 6) {
-      warnings += "El asunto no es válido.<br>";
+    if (asunto.value.length < 4) {
+      warnings += "El asunto no es válido. Debe contener al menos 4 caracteres.<br>";
       entrar = true;
     }
     if (!/^\d{10}$/.test(telefono.value)) {
-      warnings += "El teléfono no es válido.<br>";
+      warnings += "El teléfono no es válido. No antepongas 0 (cero) ni 15 en tu numero. Tampoco utilices Guiones ni parentesis.<br>";
       entrar = true;
     }
     let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       entrar = true;
     }
     if (consulta.value.length < 20) {
-      warnings += "La consulta es muy corta.<br>";
+      warnings += "La consulta es muy corta. Debe contener al menos 20 caracteres.<br>";
       entrar = true;
     }
 

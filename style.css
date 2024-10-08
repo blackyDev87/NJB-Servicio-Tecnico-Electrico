@@ -124,7 +124,7 @@ section {
 }
 
 #quienes-somos {
-  background: url("assets/placo-section.png");
+  background: url("assets/placo-section.webp");
   background-repeat: repeat;
   color: white; /* Color del texto dentro de la sección */
   padding-top: 3.125rem; /* Espaciado vertical */
